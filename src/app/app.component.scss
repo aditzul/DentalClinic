@@ -1,0 +1,45 @@
+// app.component.scss
+@import 'variables';
+
+.app-container {
+  display: flex;
+  height: 100%;
+  background-color: $background-color-gray;
+}
+
+.app-left-menu {
+  width: 250px;
+  background-color: white;
+  padding: 10px;
+  overflow: hidden;
+  color: $text-color;
+
+  // Add box shadow to the right
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1); // Adjust values as needed
+  z-index: 2; // Set a higher z-index to be on top
+  position: relative; // Enable z-index
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-top-bar {
+  background-color: $background-color-gray;
+  color: $text-color;
+  padding: 10px;
+}
+
+.app-page-dashboard {
+  flex: 1;
+  padding: 20px;
+}
+
+.app-bottom-bar {
+  background-color: $background-color-gray;
+  color: $text-color;
+  padding: 10px;
+  margin-top: auto;
+}

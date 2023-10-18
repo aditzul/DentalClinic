@@ -1,0 +1,30 @@
+// app-top-bar.component.scss
+
+.top-bar {
+  background-color: white;
+}
+
+.top-bar-list {
+  list-style-type: none;
+  padding: 5px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  .welcome-message {
+    margin-right: 10px;
+  }
+
+  .logout-link {
+    margin-left: 10px;
+  }
+}
+
+.welcome-message,
+.logout-link {
+  display: inline;
+}
+
+.welcome-message {
+  margin-left: auto; // Pushes the welcome message to the right
+}
