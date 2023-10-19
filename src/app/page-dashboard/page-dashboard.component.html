@@ -2,73 +2,60 @@
   <mat-grid-tile class="tile-component"
       [colspan]=2
       [rowspan]=1>
-        <mat-card>
+        <mat-card class="welcome-card">
           <mat-card-header>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-card-title>Buna TestName,</mat-card-title>
+            <mat-card-subtitle class="dashboard-subtitle">Vezi programarile tale de astazi</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content>
-            <p>This card indeterminates progress bar.</p>
-            <p>Text</p>
+          <mat-card-content class="welcome-card-content">
+            <button mat-flat-button="" class="mdc-button btn-bbyblue" mat-button-is-fab="false">Click aici</button>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
         </mat-card>
   </mat-grid-tile>
   <mat-grid-tile class="tile-component"
       [colspan]=2
       [rowspan]=2>
-      <mat-card>
+      <mat-card class="calendar-card">
         <mat-card-header>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          <mat-card-title>Programari - {{ todayDate }}</mat-card-title>
         </mat-card-header>
-        <mat-card-content>
-          <p>This card indeterminates progress bar.</p>
-          <p>Text</p>
+        <mat-card-content class="tile-component">
+          <div class="calendar-container">
+            <mwl-calendar-day-view
+            [viewDate]="viewDate"
+            [events]="events"
+            [hourSegments]="hourSegments"
+            [dayStartHour]="startHour"
+            [dayEndHour]="endHour"
+          ></mwl-calendar-day-view>
+          </div>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
       </mat-card>
   </mat-grid-tile>
   <mat-grid-tile class="tile-component"
       [colspan]=1
       [rowspan]=1>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
+      <mat-card class="users-card male">
         <mat-card-content>
-          <p>This card indeterminates progress bar.</p>
-          <p>Text</p>
+          <mat-card-header>
+            <mat-card-title class="users-title">Pacienti sex masculin</mat-card-title>
+          </mat-card-header>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" class="dashboard-icon" fontIcon="face" color="primary"></mat-icon>
+          <p class="card-text">32</p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
+      </mat-card>      
   </mat-grid-tile>
   <mat-grid-tile class="tile-component"
       [colspan]=1
       [rowspan]=1>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
+      <mat-card class="users-card female">
         <mat-card-content>
-          <p>This card indeterminates progress bar.</p>
-          <p>Text</p>
+          <mat-card-header>
+            <mat-card-title class="users-title">Pacienti sex feminin</mat-card-title>
+          </mat-card-header>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" class="dashboard-icon" fontIcon="face_3" color="primary"></mat-icon>
+          <p class="card-text">12</p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
       </mat-card>
   </mat-grid-tile>
 </mat-grid-list>

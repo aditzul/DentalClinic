@@ -1,17 +1,109 @@
 // app-page-dashboard.component.scss
 @import "../variables.scss";
+
 mat-card {
-    width: 100%;
-    border-radius: 20px;
-    height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  mat-card-content {
+    flex: 1;
+    overflow: hidden; // To prevent overflow
+    max-width: 90%;
+  }
 }
 
-.tile-component {
-    height: 100%;  // Set the height to 100% to stretch to fit its container
-    width: 100%;
+mat-card mat-card-subtitle.dashboard-subtitle {
     margin-top: 20px;
+    font-size: 15px;
+}
+
+.btn-bbyblue {
+    background-color: #03c9d7;
+    color: white;
+}
+
+.users-card.female {
+    background-color: #fb9778;
+}
+
+.users-card.male {
+    background-color: #03c9d7;
+}
+
+.users-title {
+    color: white;
+}
+
+mat-icon.dashboard-icon {
+    // Float the container to the right
+    float: right;
+  
+    // Set the icon color to red
+    color: red;
+  
+    // Wrap the icon in a white circle
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px; // Adjust as needed to control the size of the circle
+  
+    // Center the icon within the circle using flexbox
     display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    background-color: $background-color-gray;
+    align-items: center;
+    justify-content: center;
+  
+    // Increase the font size for a bigger icon
+    font-size: 30px; // Adjust as needed
+  }
+
+  .users-card {
+    &.male,
+    &.female {
+      color: white; // Set the text color to white
+    }
+    
+    .card-text {
+      font-size: 45px;
+      font-weight: bold;
+      text-align: center; // Center the text horizontally
+      margin-top: 30px;
+      margin-left: 20px;
+    }
+  } 
+  
+  
+.tile-component {
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .calendar-container {
+    height: 400px; // Set a fixed height or adjust as needed
+    max-width: 100%; // Fit the container width
+    overflow-y: auto; // Enable vertical scrolling
+    box-sizing: border-box; // Include padding and borders in the total width
+  }
+}
+.welcome-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-card:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: unset;
+    background: url(../../assets/images/welcome-card-bg.svg);
+    background-repeat: no-repeat;
+    background-position: right -15px top 11px;
+    background-size: 210px;
+}
+.welcome-card-content {
+    margin-top: 50px;
 }

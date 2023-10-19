@@ -15,8 +15,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FeatherModule } from 'angular-feather';
+import { Camera, Heart, Users } from 'angular-feather/icons';
 
-
+const icons = {
+  Camera,
+  Heart,
+  Users,
+};
 
 @NgModule({
   declarations: [
@@ -37,6 +45,8 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     MatIconModule,
     MatCardModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    FeatherModule.pick(icons),
   ],
   providers: [],
   bootstrap: [AppComponent]
