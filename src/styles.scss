@@ -4,10 +4,13 @@
 @import 'app/top-bar/top-bar.component';
 @import 'app/page-dashboard/page-dashboard.component';
 @import 'app/bottom-bar/bottom-bar.component';
+ 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
-  }
-  
+mat-card.mat-mdc-card {
+    box-shadow: 1px 0 20px #00000014;
+}
+mat-grid-tile.mat-grid-tile {
+    overflow: visible;
+}

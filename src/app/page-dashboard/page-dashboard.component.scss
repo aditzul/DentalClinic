@@ -1,1 +1,17 @@
 // app-page-dashboard.component.scss
+@import "../variables.scss";
+mat-card {
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.tile-component {
+    height: 100%;  // Set the height to 100% to stretch to fit its container
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: $background-color-gray;
+}
