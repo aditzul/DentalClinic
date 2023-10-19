@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageDashboardComponent } from './page-dashboard/page-dashboard.component';
 import { PageLogoutComponent } from './page-logout/page-logout.component';
+import { PageProfileComponent } from './page-profile/page-profile.component';
 
 
 const routes: Routes = [
   { path: 'dashboard', component: PageDashboardComponent },
-  { path: 'logout', component: PageLogoutComponent}
+  { path: 'profile', component: PageProfileComponent},
+  { path: 'logout', component: PageLogoutComponent},
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Default route
   // Add more routes if needed
 ];
 
