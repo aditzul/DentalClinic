@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
@@ -15,10 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { CalendarDateFormatter, CalendarEventTitleFormatter, CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FeatherModule } from 'angular-feather';
 import { Camera, Heart, Users } from 'angular-feather/icons';
+import { PageAppointmentsComponent } from './page-appointments/page-appointments.component';
+import { CustomDateFormatter } from './shared/custom-date-formatter.provider';
+import { CustomEventTitleFormatter } from './shared/custom-event-title-formatter.provider';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 const icons = {
   Camera,
@@ -34,7 +39,8 @@ const icons = {
     BottomBarComponent,
     PageDashboardComponent,
     PageProfileComponent,
-    PageLogoutComponent
+    PageLogoutComponent,
+    PageAppointmentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,10 +51,22 @@ const icons = {
     MatInputModule,
     MatIconModule,
     MatCardModule,
+    MatToolbarModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     FeatherModule.pick(icons),
+    CommonModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: CalendarDateFormatter,
+      useClass: CustomDateFormatter,
+    },
+    {
+      provide: CalendarEventTitleFormatter,
+      useClass: CustomEventTitleFormatter,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

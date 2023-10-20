@@ -1,17 +1,15 @@
 // app-page-dashboard.component.scss
-@import "../variables.scss";
-
-mat-card {
+mat-card.dashboard {
   width: 100%;
   border-radius: 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
 
-  mat-card-content {
+  mat-card-content.dashboard {
     flex: 1;
     overflow: hidden; // To prevent overflow
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
@@ -20,9 +18,15 @@ mat-card mat-card-subtitle.dashboard-subtitle {
     font-size: 15px;
 }
 
-.btn-bbyblue {
-    background-color: #03c9d7;
-    color: white;
+mat-card mat-card-header mat-card-title.card-programari {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .btn-bbyblue {
+  background-color: #03c9d7;
+  color: white;
 }
 
 .users-card.female {
@@ -36,6 +40,7 @@ mat-card mat-card-subtitle.dashboard-subtitle {
 .users-title {
     color: white;
 }
+ */
 
 mat-icon.dashboard-icon {
     // Float the container to the right
@@ -57,21 +62,14 @@ mat-icon.dashboard-icon {
     // Increase the font size for a bigger icon
     font-size: 30px; // Adjust as needed
   }
-
-  .users-card {
-    &.male,
-    &.female {
-      color: white; // Set the text color to white
-    }
     
-    .card-text {
-      font-size: 45px;
-      font-weight: bold;
-      text-align: center; // Center the text horizontally
-      margin-top: 30px;
-      margin-left: 20px;
-    }
-  } 
+  .card-text {
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center; // Center the text horizontally
+    margin-top: 30px;
+    margin-left: 20px;
+  }
   
   
 .tile-component {

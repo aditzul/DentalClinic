@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class LeftMenuComponent {
   menuItems = [
     { label: 'Dashboard', link: '/dashboard' },
+    { label: 'Appointments', link: '/appointments' },
     { label: 'Profile', link: '/profile' },
   ];
 }

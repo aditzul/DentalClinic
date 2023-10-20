@@ -14,3 +14,42 @@ mat-card.mat-mdc-card {
 mat-grid-tile.mat-grid-tile {
     overflow: visible;
 }
+.cardWithShadow {
+    box-shadow: 1px 0 20px #00000014;
+}
+
+.roundedCard {
+    border-radius: 50%;
+}
+
+.button-sepparator {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.color-peach {
+    background-color: #fb9778!important;
+    color: white!important;
+}
+
+.color-bbyblue {
+    background-color: #03c9d7!important;
+    color: white!important;
+}
+
+
+.rounded-toolbar {
+    border-top-right-radius: 20px!important;
+    border-top-left-radius: 20px!important;
+}
+
+.cal-week-view .cal-day-headers {
+    text-transform: capitalize!important;
+}
+.mat-toolbar-row {
+    text-transform: capitalize!important;
+}

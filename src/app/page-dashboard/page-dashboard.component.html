@@ -2,24 +2,30 @@
   <mat-grid-tile class="tile-component"
       [colspan]=2
       [rowspan]=1>
-        <mat-card class="welcome-card">
+        <mat-card class="welcome-card dashboard">
           <mat-card-header>
             <mat-card-title>Buna TestName,</mat-card-title>
-            <mat-card-subtitle class="dashboard-subtitle">Vezi programarile tale de astazi</mat-card-subtitle>
+            <mat-card-subtitle class="dashboard-subtitle">Nu stiu ce-o sa pun aici hahahaa</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content class="welcome-card-content">
-            <button mat-flat-button="" class="mdc-button btn-bbyblue" mat-button-is-fab="false">Click aici</button>
+          <mat-card-content class="welcome-card-content dashboard">
+            Sau aici :)))
           </mat-card-content>
         </mat-card>
   </mat-grid-tile>
   <mat-grid-tile class="tile-component"
       [colspan]=2
       [rowspan]=2>
-      <mat-card class="calendar-card">
-        <mat-card-header>
-          <mat-card-title>Programari - {{ todayDate }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="tile-component">
+      <mat-card class="calendar-card dashboard">
+        <mat-toolbar class="rounded-toolbar color-peach">
+          <mat-toolbar-row>
+            <mat-toolbar-row>
+              <span>Programari - {{ todayDate }}</span>
+              <span class="toolbar-spacer"></span>
+              <button mat-button><mat-icon class="add-icon" aria-hidden="false" aria-label="Add entry">add</mat-icon></button>
+            </mat-toolbar-row>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-card-content class="dashboard tile-component">
           <div class="calendar-container">
             <mwl-calendar-day-view
             [viewDate]="viewDate"
@@ -27,6 +33,7 @@
             [hourSegments]="hourSegments"
             [dayStartHour]="startHour"
             [dayEndHour]="endHour"
+            [locale]="locale"
           ></mwl-calendar-day-view>
           </div>
         </mat-card-content>
@@ -35,10 +42,10 @@
   <mat-grid-tile class="tile-component"
       [colspan]=1
       [rowspan]=1>
-      <mat-card class="users-card male">
-        <mat-card-content>
+      <mat-card class="color-bbyblue dashboard">
+        <mat-card-content class="dashboard">
           <mat-card-header>
-            <mat-card-title class="users-title">Pacienti sex masculin</mat-card-title>
+            <mat-card-title>Pacienti sex masculin</mat-card-title>
           </mat-card-header>
           <mat-icon aria-hidden="false" aria-label="Example home icon" class="dashboard-icon" fontIcon="face" color="primary"></mat-icon>
           <p class="card-text">32</p>
@@ -48,10 +55,10 @@
   <mat-grid-tile class="tile-component"
       [colspan]=1
       [rowspan]=1>
-      <mat-card class="users-card female">
-        <mat-card-content>
+      <mat-card class="color-peach dashboard">
+        <mat-card-content class="dashboard">
           <mat-card-header>
-            <mat-card-title class="users-title">Pacienti sex feminin</mat-card-title>
+            <mat-card-title>Pacienti sex feminin</mat-card-title>
           </mat-card-header>
           <mat-icon aria-hidden="false" aria-label="Example home icon" class="dashboard-icon" fontIcon="face_3" color="primary"></mat-icon>
           <p class="card-text">12</p>
