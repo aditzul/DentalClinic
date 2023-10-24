@@ -59,11 +59,11 @@
           [events]="events"
           (dayClicked)="dayClicked($event.day)"
           [weekStartsOn]="weekStartsOn"
-          [weekendDays]="weekendDays"
-          [excludeDays]="excludeDays"
           [locale]="locale"
           [activeDayIsOpen]="activeDayIsOpen"
           (eventClicked)="eventClicked($event)"
+          [refresh]="refresh"
+          (eventTimesChanged)="eventTimesChanged($event)"
         >
         </mwl-calendar-month-view>
         <mwl-calendar-week-view
@@ -73,17 +73,15 @@
           [hourSegments]="hourSegments"
           [dayStartHour]="startHour"
           [weekStartsOn]="weekStartsOn"
-          [weekendDays]="weekendDays"
-          [excludeDays]="excludeDays"
           [locale]="locale"
           (eventClicked)="eventClicked($event)"
           [dayEndHour]="endHour"
+          [refresh]="refresh"
+          (eventTimesChanged)="eventTimesChanged($event)"
         >
         </mwl-calendar-week-view>
         <mwl-calendar-day-view
           *ngSwitchCase="'day'"
-          [viewDate]="viewDate"
-          [events]="events"
           [viewDate]="viewDate"
           [events]="events"
           [hourSegments]="hourSegments"
@@ -91,6 +89,8 @@
           [locale]="locale"
           (eventClicked)="eventClicked($event)"
           [dayEndHour]="endHour"
+          [refresh]="refresh"
+          (eventTimesChanged)="eventTimesChanged($event)"
         >
         </mwl-calendar-day-view>
       </div>

@@ -47,9 +47,14 @@ mat-grid-tile.mat-grid-tile {
     border-top-left-radius: 20px!important;
 }
 
+.cal-month-view .cal-cell-row {
+    text-transform: capitalize!important;
+}
+
 .cal-week-view .cal-day-headers {
     text-transform: capitalize!important;
 }
+
 .mat-toolbar-row {
     text-transform: capitalize!important;
 }

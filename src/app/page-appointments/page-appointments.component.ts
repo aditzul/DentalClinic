@@ -2,11 +2,14 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/
 import {
   CalendarEvent,
   CalendarView,
-  DAYS_OF_WEEK,} from 'angular-calendar';
-import { addDays, startOfDay, endOfDay, isSameMonth, isSameDay } from 'date-fns';
+  DAYS_OF_WEEK,
+  CalendarEventTimesChangedEvent,
+} from 'angular-calendar';
+import { addDays, addHours, startOfDay, endOfDay, isSameMonth, isSameDay } from 'date-fns';
 import { registerLocaleData } from '@angular/common';
 import localeRo from '@angular/common/locales/ro';
 import { Output, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 registerLocaleData(localeRo);
 
 @Component({
@@ -59,10 +62,24 @@ export class PageAppointmentsComponent {
     const today = new Date();
     this.events = [ 
       {
-        title: 'Event 1',
-        start: startOfDay(today),
-        end: addDays(startOfDay(today), 3),
-        color: { primary: '#ad2121', secondary: '#FAE3E3' }
+        title: 'Event Test',
+        start: new Date(startOfDay(new Date()).setHours(8, 0, 0, 0)),
+        end: new Date(startOfDay(new Date()).setHours(9, 30, 0, 0)),
+        color: { primary: '#ad2121', secondary: '#FAE3E3' },
+        draggable: true,
+        resizable: {
+          beforeStart: true, // this allows you to configure the sides the event is resizable from
+          afterEnd: true,
+        },
+        actions: [
+          {
+            label: '<i class="fas fa-fw fa-trash-alt"></i>',
+            onClick: ({ event }: { event: CalendarEvent }): void => {
+              this.events = this.events.filter((iEvent) => iEvent !== event);
+              console.log('Event deleted', event);
+            },
+          },
+        ],
       },
       {
         title: 'Event 2',
@@ -92,6 +109,21 @@ export class PageAppointmentsComponent {
       },
       // Add more events as needed
     ];
+
+  }
+
+  refresh = new Subject<void>();
+
+  eventTimesChanged({
+    event,
+    newStart,
+    newEnd,
+  }: CalendarEventTimesChangedEvent): void {
+    event.start = newStart;
+    event.end = newEnd;
+    console.log(event.start)
+    console.log(event.end)
+    this.refresh.next();
   }
 
   eventClicked({ event }: { event: CalendarEvent }): void {
