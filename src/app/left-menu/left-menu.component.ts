@@ -12,5 +12,6 @@ export class LeftMenuComponent {
     { label: 'Dashboard', link: '/dashboard' },
     { label: 'Appointments', link: '/appointments' },
     { label: 'Profile', link: '/profile' },
+    { label: 'Patients', link: '/patients' },
   ];
 }

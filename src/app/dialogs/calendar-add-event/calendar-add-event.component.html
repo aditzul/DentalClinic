@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Adauga programare</h1>
+<div mat-dialog-content>
+    <form>
+        <input type="time" value="{{inputData.currentTime}}">
+    </form>
+    <div class="example-container">
+        <mat-form-field>
+            <mat-label>Selecteaza data</mat-label>
+            <input matInput [matDatepicker]="datePicker" [value]="inputData.currentDate">
+            <mat-datepicker-toggle matIconSuffix [for]="datePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datePicker></mat-datepicker>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <mat-select placeholder="Selecteaza pacient">
+              <mat-option id='1' value="pacient1">Pacient 1</mat-option>
+              <mat-option id='2' value="pacient2">Pacient 2</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="saveCalendarEventDialog()">Salveaza</button>
+    <button mat-button mat-dialog-close>Anuleaza</button>
+</div>

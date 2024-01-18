@@ -4,6 +4,7 @@ import { PageDashboardComponent } from './page-dashboard/page-dashboard.componen
 import { PageLogoutComponent } from './page-logout/page-logout.component';
 import { PageProfileComponent } from './page-profile/page-profile.component';
 import { PageAppointmentsComponent } from './page-appointments/page-appointments.component';
+import { PagePatientsComponent } from './page-patients/page-patients.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'profile', component: PageProfileComponent},
   { path: 'logout', component: PageLogoutComponent},
   { path: 'appointments', component: PageAppointmentsComponent},
+  { path: 'patients', component: PagePatientsComponent},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Default route
   // Add more routes if needed
 ];

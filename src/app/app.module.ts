@@ -24,6 +24,15 @@ import { CustomDateFormatter } from './shared/custom-date-formatter.provider';
 import { CustomEventTitleFormatter } from './shared/custom-event-title-formatter.provider';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CalendarAddEventComponent } from './dialogs/calendar-add-event/calendar-add-event.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { PagePatientsComponent } from './page-patients/page-patients.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+
 
 const icons = {
   Camera,
@@ -41,6 +50,8 @@ const icons = {
     PageProfileComponent,
     PageLogoutComponent,
     PageAppointmentsComponent,
+    CalendarAddEventComponent,
+    PagePatientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,10 +63,16 @@ const icons = {
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
+    MatDialogModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     FeatherModule.pick(icons),
     CommonModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [
     {
