@@ -1,3 +1,21 @@
 table {
     width: 100%;
   }
+
+  .patientsCard {
+    border-radius: 20px;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.ButtonAddPatient {
+    float: right;
+}
+
+.mat-mdc-table.patientsTable {
+    table-layout: fixed !important;
+
+}

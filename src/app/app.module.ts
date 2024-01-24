@@ -32,6 +32,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { PagePatientsComponent } from './page-patients/page-patients.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 
 const icons = {
@@ -52,6 +54,7 @@ const icons = {
     PageAppointmentsComponent,
     CalendarAddEventComponent,
     PagePatientsComponent,
+    PageLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ const icons = {
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
+    HttpClientModule,
   ],
   providers: [
     {

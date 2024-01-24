@@ -39,6 +39,25 @@
   margin-right: 10%;
 }
 
+.breadcrumbs {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.inline-list {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.inline-list li {
+  display: inline;
+  margin-right: 10px; 
+}
+
 .app-bottom-bar {
   background-color: $background-color-gray;
   color: $text-color;

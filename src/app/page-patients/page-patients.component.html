@@ -1,49 +1,73 @@
-<mat-card class="cardWithShadow calendarCard roundedCard">
-    <mat-toolbar class="rounded-toolbar color-peach">
-      <mat-toolbar-row>
+<mat-card class="cardWithShadow patientsCard roundedCard">
+<mat-toolbar class="rounded-toolbar color-peach">
+    <mat-toolbar-row class="ButtonAddPatient">
         <button mat-button>
-          <mat-icon class="add-icon" aria-hidden="false" aria-label="Add entry"
-            >add</mat-icon
-          >
+        <mat-icon class="add-icon" aria-hidden="false" aria-label="Add entry">add</mat-icon>
         </button>
-      </mat-toolbar-row>
+    </mat-toolbar-row>
     </mat-toolbar>
-    <mat-card-content>
-        <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="dataSource">
-          
-              <!-- Position Column -->
-              <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> No. </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-              </ng-container>
-          
-              <!-- Name Column -->
-              <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-              </ng-container>
-          
-              <!-- Weight Column -->
-              <ng-container matColumnDef="weight">
-                <th mat-header-cell *matHeaderCellDef> Weight </th>
-                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-              </ng-container>
-          
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="symbol">
-                <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-              </ng-container>
-          
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-          
-            <mat-paginator [pageSizeOptions]="[10, 20, 30]"
-                           showFirstLastButtons
-                           aria-label="Select page of periodic elements">
-            </mat-paginator>
-          </div>
-          
-    </mat-card-content>
+    <mat-form-field>
+        <mat-label>Filtru</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Ionescu" #input>
+      </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="patientsTable mat-elevation-z8">
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.lastName}} </td>
+    </ng-container>
+
+    <!-- First Name Column -->
+    <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.firstName}} </td>
+    </ng-container>
+
+    <!-- Date of Birth Column -->
+    <ng-container matColumnDef="dateOfBirth">
+        <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.dateOfBirth | date: 'dd.MM.yyyy'}} </td>
+    </ng-container>
+
+    <!-- Insured Column -->
+    <ng-container matColumnDef="insured">
+        <th mat-header-cell *matHeaderCellDef> Insured </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.insured ? 'Yes' : 'No'}} </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.address}} </td>
+    </ng-container>
+
+    <!-- Phone Number Column -->
+    <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.phoneNumber}} </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.email}} </td>
+    </ng-container>
+
+    <!-- Registration Date Column -->
+    <ng-container matColumnDef="registrationDate">
+        <th mat-header-cell *matHeaderCellDef> Registration Date </th>
+        <td mat-cell *matCellDef="let patient">
+        {{ patient.registrationDate | date: 'dd.MM.yyyy' }}
+        </td>
+    </ng-container>          
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 20, 30]"
+                    showFirstLastButtons
+                    aria-label="Select page of patients">
+    </mat-paginator>
+</mat-card>
